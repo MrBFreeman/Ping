@@ -1,0 +1,12 @@
+---
+- name: Тест доступности хостов
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Проверить соединение (Python должен быть установлен на хосте)
+      ansible.builtin.ping:
+
+    - name: Вывести сообщение об успехе
+      ansible.builtin.debug:
+        msg: "Хост {{ inventory_hostname }} успешно отвечает на ping!"
